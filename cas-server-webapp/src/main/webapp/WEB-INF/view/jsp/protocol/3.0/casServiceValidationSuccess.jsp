@@ -49,7 +49,7 @@
                    	    Entry entry = (Entry) pageContext.getAttribute("attr");
                    	    Object value = entry.getValue();
                    	    pageContext.setAttribute("isMultiple", value instanceof Collection || value instanceof Map || value instanceof Object[]
-                                                               || value instanceof Iterator || value instanceof Enumeration);
+                                                                || value instanceof Iterator || value instanceof Enumeration);
                    	%>
                     <c:choose>
                         <%-- it's a single element, output its toString() --%>
@@ -64,9 +64,6 @@
                         </c:otherwise>
                     </c:choose>
                 </c:forEach>
-                <cas:isFromNewLogin>${fn:escapeXml(assertion.fromNewLogin)}</cas:isFromNewLogin>
-                <cas:longTermAuthenticationRequestTokenUsed>${fn:escapeXml(longTermAuthenticationRequestTokenUsed)}</cas:longTermAuthenticationRequestTokenUsed>
-                <cas:authenticationDate>${fn:escapeXml(assertion.primaryAuthentication.authenticationDate)}</cas:authenticationDate>
             </cas:attributes>
         </c:if>
 
